@@ -15,15 +15,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LogIn"
+        initialRouteName="SignUp"
         screenOptions={{
           headerStyle: { backgroundColor: '#467FD3' },
           headerTitleStyle: { color: '#FFFFFF' },
           headerTitle: 'Memo App',
           headerTintColor: '#FFFFFF',
           headerBackTitle: 'Back',
+          // Makes an Android screen swiped to go to the next one like iPhone
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          // Enabling Android screens to be swiped to go back
+          // Makes an Android screen swiped to get back like iPhone
           gestureEnabled: true,
           gestureDirection: 'horizontal',
         }}
@@ -36,6 +37,7 @@ export default function App() {
           name="LogIn"
           component={LogInScreen}
           options={{
+            // Makes an iPhone screen fading out to go to the next one like Android
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
           }}
         />
@@ -43,6 +45,7 @@ export default function App() {
           name="SignUp"
           component={SignUpScreen}
           options={{
+            // Makes an iPhone screen fading out to go to the next one like Android
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
           }}
         />
